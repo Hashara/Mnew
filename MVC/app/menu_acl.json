@@ -1,0 +1,115 @@
+{
+
+"Company":{
+
+
+	"Contacts" : {
+		"My Contacts" : "contacts",
+		"separator" : "<br>",
+		"Add Contacts" : "contacts/add"
+	},
+
+	"Amount collected": "garbages",
+	"About us" : "details",
+	"Contact us" : "calls",
+	"Logout" : "register/logout"
+	
+},
+
+"Admin":{
+
+
+	"Contacts" : {
+		"My Contacts" : "contacts",
+		"separator" : "<br>",
+		"Add Contacts" : "contacts/add"
+	},
+
+	"Companies" : {
+		"Current Companies" : "company",
+		"separator" : "<br>",
+		"Add Companies" : "company/add"
+	},
+
+	"Urban Councils":
+	{
+		"Urban Councils" : "uc",
+		"separator" : "<br>",
+		"Add Ucs" : "uc/add"
+	},
+
+
+	"Logout" : "register/logout"
+	
+},
+
+"Customer":{
+
+	"Contacts" : {
+		"My Contacts" : "contacts",
+		"separator" : "<br>",
+		"Add Contacts" : "contacts/add"
+	},
+
+	"Requests" : 
+	{
+
+		"My Requests" : "requests",
+		"separator" : "<br>",
+		"Add Requests" : "requests/add",
+		"separator" : "<br>"
+	},
+
+	"Suggestions and Complains" :
+		{
+			"Suggestions":"suggestions",
+			"separator" : "<br>",
+			"Add suggestions" : "suggestions/add"
+		},
+
+	"About us" : "details",
+	"Contact us" : "calls",
+	"Logout" : "register/logout"
+
+},
+
+"Guest":{
+
+		"Register" :{
+
+		"Provider"  : "register/register",
+		"separator" : "<br>",
+		"Customer" : "register/register"
+
+	},
+
+		"About us" : "details",
+		"Contact us" : "calls",
+		"Login" : "register/login"
+
+},
+
+	"Government":
+	{
+		"Announcements":
+		{
+			"Announcements": "announcements",
+			"separator" : "<br>",
+			"Add Announcements": "announcements/add"
+
+		},
+
+		"Garbage Amount":
+		{
+			"Current Size" : "garbages",
+			"separator" : "<br>",
+			"Add/Remove Size" : "garbages/add"
+		},
+
+		"About us" : "details",
+		"Contact us" : "calls",
+		"Logout" : "register/logout"
+
+	}
+
+}

@@ -1,0 +1,69 @@
+{
+	"Guest":{
+		"denied" : {},
+		"Home" : ["*"],
+		"Request" : ["*"],
+		"Register" : ["login","register"],
+		"Restricted" : ["*"],
+		"Details" : ["*"],
+		"Call" : ["*"]
+
+	},
+
+	"Company" :
+	 {
+	 	"denied" : { "Register" : [ "login","register"]
+	 	},
+	 	"Register" : ["logout"],
+	 	"Contacts" :["*"],
+	 	"Advertisements" : ["*"],
+	 	"Home" : ["*"],
+	 	"Accounts" : ["edit","index","delete"],
+	 	"Details" : ["*"],
+		"Call" : ["*"],
+		"Garbages": ["*"]
+	 },
+
+	 	"Admin" :
+	 {
+	 	"denied" : { "Register" : [ "login","register"]
+	 	},
+	 	"Register" : ["logout"],
+	 	"Contacts" :["*"],
+	 	"Advertisements" : ["*"],
+	 	"Home" : ["*"],
+	 	"Accounts" : ["edit","index","delete"]
+	 },
+
+
+	 "Customer" :
+	 {
+	 	"denied" : { "Register" : [ "login","register"]
+	 	},
+	 	"Register" : ["logout"],
+	 	"Contacts" :["*"],
+	 	"Tools"    : ["*"],
+	 	"Home" : ["*"],
+	 	"Accounts" : ["*"],
+	 	"Requests" : ["*"],
+	 	"Details" : ["*"],
+		"Calls" : ["*"],
+		"Suggestions" : ["*"]
+	 },
+
+	 "Government":
+	 {
+	 	"denied" : { "Register" : [ "login","register"]
+	 	},
+	 	"Register" : ["logout"],
+	 	"Contacts" :["*"],
+	 	"Advertisements" : ["*"],
+	 	"Home" : ["*"],
+	 	"Accounts" : ["edit","index","delete"],
+	 	"Announcements" : ["*"],
+	 	"Garbages" : ["*"],
+	 	"Calls" : ["*"],
+	 	"Details": ["*"]
+	 }
+
+}
