@@ -1,4 +1,4 @@
-<?php $this->setSiteTitle('Edit Requests'); ?>
+<?php $this->setSiteTitle('Edit Contact'); ?>
 <?php $this->start('head'); ?>
 <?php $this->end(); ?>
 <?php $this->start('body'); ?>
@@ -6,8 +6,8 @@
 <div class="col-md-8 col-md-offset-2 well">
 <!-- 	<a href="<?=PROOT?>contacts" class="btn btn-xs btn-default"> Back</a>
  -->	
- <h2 class="text-center"><?=$this->request->displayName()?></h2>
- <?= $this->partial('requests','form')?>
+ <h2 class="text-center"><?=$this->contact->displayName()?></h2>
+ <?= $this->partial('contacts','form')?>
 	<!-- <div class="col-md-6">
 		<p><strong><pre> Email :  </strong><?=$this->contact->email?></pre></p>
 		<p><strong><pre> Mobile :  </strong><?=$this->contact->cell_phone?></pre></p>
