@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="<?=PROOT?>css/bootstrap.min.css" media="screen" title="ABCD">
+  
   <link rel="stylesheet" href="<?=PROOT?>css/custom.css" media="screen" title="ABCD">
-
+  <link rel="stylesheet" href="<?=PROOT?>css/login.css" media="screen" title="ABCD">
 
      <script src="<?=PROOT?>js/jQuery-2.2.4.min.js"></script>
      <script src="<?=PROOT?>js/bootstrap.min.js"></script>
@@ -19,7 +19,12 @@
   </head>
   <body> 
     <!-- bye -->
-    <?= $this->content('body'); ?>
+    <?php include 'main_menu_3.php' ?>
+    <!-- <div class="container-fluid" style="min-height:cal(100% - 125px);"> <-->
+
+       <?= $this->content('body'); ?>
+
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
