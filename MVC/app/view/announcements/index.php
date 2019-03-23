@@ -1,30 +1,35 @@
-<?php $this->setSiteTitle("View Accounts"); ?>
-<?php $this->start('head'); ?>
-<?php $this->end(); ?>
+
+<?php $this->setSiteTitle("Announcements"); ?>
 <?php $this->start('body'); ?>
+<h1 class ="text-center red"> My Contacts </h1>
+<table class="table table-striped table-condensed table-bordered">
+	<thead>
+		<th> Topic</th>
+		<th> Content</th>
+		<th> Urban Council</th>
+		<!-- <th> Home_phone</th> -->
+		<th></th>
+	</thead>
+	<body>
+		<?php foreach($this->contacts as $contact): ?>
 
-<div class="col-md-8 col-md-offset-2 well">
-	
-	<h2 class="text-center"><?=$this->account->username?></h2>
-	<div class="col-md-6">
-		<p><strong><pre> Name :  </strong><?=$this->account->displayName()?></pre></p>
-		<p><strong><pre> Email :  </strong><?=$this->account->email?></pre></p>
-		<p><strong><pre> Contact :  </strong><?=$this->account->phoneNumber2?></pre></p>
-		<p><strong><pre> Address :  </strong><?=$this->account->displayAddress()?></pre></p>
-		<p><strong><pre> Type of User :  </strong><?=$this->account->displayType()?></pre></p>
-	</div>
-	<div class="col-md-6">
-		<?=$this->account->displayAddressLabel()?>
-	</div>
+			<tr>
+				<td>
+					<a 
+					href="<?=PROOT?>announcements/details/<?=$contact->id?>">
+					<?= $contact->topic; ?>
+					</a>
+				</td>
+				
+				<td><?= $contact->content; ?></td>
+				<td><?= $contact->uc; ?></td>
+				<td><a href="<?=PROOT?>announcements/edit/<?=$contact->id?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> Edit </a>
 
-	<a href="<?=PROOT?>accounts/edit/<?=$this->account->id?>" class="btn btn-xs btn-default"> Edit </a>
+				<a href="<?=PROOT?>announcements/delete/<?=$contact->id?>" class="btn btn-danger btn-xs" onclick="if(!confirm('Are you sure to Delete <?=$contact->displayName()?>')){return false;}"><i class="glyphicon glyphicon-remove"></i> Delete </a></td>
+			</tr>
 
-	<a href="<?=PROOT?>accounts/delete/<?=$this->account->id?>" class="btn btn-xs btn-default" > Delete Account </a>
-
-	<a href="<?=PROOT?>home" class="btn btn-xs btn-default"> Back</a>
-
-
-
-</div>
-
+		<?php endforeach; ?>
+	</body>
+</table>
 <?php $this->end(); ?>
+
