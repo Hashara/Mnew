@@ -6,7 +6,7 @@
 		"Register" : ["login","register"],
 		"Restricted" : ["*"],
 		"Details" : ["*"],
-		"Call" : ["*"]
+		"Calls" : ["*"]
 
 	},
 
@@ -32,7 +32,9 @@
 	 	"Contacts" :["*"],
 	 	"Advertisements" : ["*"],
 	 	"Home" : ["*"],
-	 	"Accounts" : ["edit","index","delete"]
+	 	"Accounts" : ["edit","index","delete"],
+	 	"Company" :["*"]
+
 	 },
 
 
