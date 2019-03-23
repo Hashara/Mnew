@@ -12,26 +12,18 @@
         <div><?=$this->displayErrors ?></div>
         <div class="form-group">
             <div>
-                <label for="fname"><h4>First name</h4></label><br>
+                <label for="username"><h4>User Name</h4></label><br>
                 <input 
                 type="text" 
-                name="fname" 
-                id="fname" 
+                name="username" 
+                id="username" 
                 required
                 class="form-control"
-                value="<?=$this->$account->fname ?>">
-            </div>
-            <div>
-                <label for="lname"><h4>Last name</h4></label>
-                <input 
-                type="text" 
-                name="lname" 
-                id="lname" 
-                class="form-control" 
-                value="<?=$this->post['lname'] ?>">
+                value="<?=$this->$account->username ?>">
             </div>
 
-            <div>
+
+<!--             <div>
                 <label for="email"><h4>Email</h4></label>
                 <input 
                 type="text" 
@@ -42,8 +34,8 @@
                 title="must be a valid email address"
                 value="<?=$this->post['email'] ?>">
             </div>
-
-            <div>
+ -->
+<!--             <div>
                 <label for="username"><h4>Username</h4></label>
                 <input 
                 type="text" 
@@ -52,7 +44,7 @@
                 class="form-control" 
                 required
                 value="<?=$this->post['username'] ?>">
-            </div>
+            </div> -->
             <div>
                 <label for="password"><h4>Password</h4></label>
                 <input 
@@ -86,40 +78,15 @@
             </div>
 
             <div>
-                <label for="phoneNumber"><h4>Contact Number 2</h4></label>
+                <label for="contactnumber"><h4>Contact Number 2</h4></label>
                 <input 
                 type="text" 
-                name="phoneNumber2" 
-                id="phoneNumber2" 
+                name="contactnumber" 
+                id="contactnumber" 
                 class="form-control" 
                 title="must be a valid Phone number"
-                value="<?=$this->post['phoneNumber2'] ?>">
+                value="<?=$this->post['contactnumber'] ?>">
             </div>
-            <div>
-                <label for="serviceType"><h4>Service Type</h4></label><br>
-                  <input type="checkbox" name="serviceType[]" id="serviceType"   value="Washing" > Washing<br>
-                  <input type="checkbox" name="serviceType[]" id="serviceType"   value="Cleaning"> Cleaning<br>
-                  <input type="checkbox" name="serviceType[]" id="serviceType"   value="Food"> Food<br>
-                  <input type="checkbox" name="serviceType[]" id="serviceType"   value="Requests"> Allow Requests<br>
-
-            </div
-            <div>
-                <label for="userType"><h4>User type</h4></label><br>
-                  <input type="radio" name="userType" id="userType"   value="Provider" checked> Provider<br>
-                  <input type="radio" name="userType" id="userType"   value="Customer"> Customer<br>
-                  <input type="radio" name="userType" id="userType"   value="Both"> Both Provider and Customer<br>
-            </div>
-            <div>
-                <label for="customerResidence"><h4>Customer Residence</h4></label>
-                <input 
-                type="text" 
-                name="customerResidence" 
-                id="customerResidence" 
-                class="form-control" 
-                required
-                value="<?=$this->post['customerResidence'] ?>">
-            </div>
-
         </div>
         
         <div class="text-center">
