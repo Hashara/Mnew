@@ -8,7 +8,7 @@ class RegisterController extends Controller
 	public function __construct($controller, $action)
 	{
 		parent::__construct($controller , $action);
-		$this->view->setLayout('loginlay');
+		$this->view->setLayout('defaultlay');
 		$this->load_model('Users');
 	}
 
