@@ -4,16 +4,12 @@
 <?php $this->start('body'); ?>
 
 <div class="col-md-8 col-md-offset-2 well">
-	<a href="<?=PROOT?>contacts" class="btn btn-xs btn-default"> Back</a>
-	<h2 class="text-center"><?=$this->contact->displayaddName()?></h2>
+	<a href="<?=PROOT?>garbages" class="btn btn-xs btn-default"> Back</a>
 	<div class="col-md-6">
-		<p><strong><pre> First :  </strong><?=$this->contact->age?></pre></p>
-		<p><strong><pre> Email :  </strong><?=$this->contact->email?></pre></p>
-		<p><strong><pre> Mobile :  </strong><?=$this->contact->cell_phone?></pre></p>
-		<p><strong><pre> Home :  </strong><?=$this->contact->home_phone?></pre></p>
-	</div>
-	<div class="col-md-6">
-		<?=$this->contact->displayAddressLabel()?>
+		<p><strong><pre> Place :  </strong><?=$this->contact->name?></pre></p>
+		<p><strong><pre> Date :  </strong><?=$this->contact->date?></pre></p>
+		<p><strong><pre> Gather Amount :  </strong><?=$this->contact->plus?></pre></p>
+		<p><strong><pre> Sale Amount :  </strong><?=$this->contact->sale?></pre></p>
 	</div>
 </div>
 
