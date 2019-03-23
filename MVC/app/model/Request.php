@@ -1,18 +1,15 @@
 <?php
 
-class Requests extends Model
+class Request extends Model
 {
-	public function __construct($request='')
+	public function __construct($contact='')
 	{
-		$table = 'requests';
+		$table = 'request';
 		parent:: __construct($table);
 		$this->_softDelete = true;
 	}
 
 	public $deleted =0;
-	
-
-	// public $customer =currentUser()->username;
 
 	public function findByUserId($userId,$params=[])
 	{
@@ -24,31 +21,22 @@ class Requests extends Model
 
 	public function displayName()
 	{
-		return $this->service;;
-	}
+		return $this->name;	}
 
 	public static $addValidation =
 	[
-		'service' =>[
-			'display' =>'Service',
-			'required' => true,
-			'min' => 6
-	],
-	
-		'description' =>
-		[
-			'display' =>'Description',
-			'required' => true
-			// 'max' => 155
-		] 
+
 	];
 
 
-	public function findByIdAndUserId($request_id,$user_id,$params=[])
+	public function findByIdAndUserId($contact_id,$user_id,$params=[])
 	{
-		// dnd($request_id,);
+		// dnd($contact_id);
 		// dnd($user_id);
-		$conditions = ['conditions' => 'id = ? AND user_id = ?','bind' => [$request_id,$user_id]
+		$conditions =
+		 [
+		'conditions' => 'id = ? AND user_id = ?',
+		'bind' => [$contact_id , $user_id]
 	];
 
 	// dnd($conditions);
@@ -58,35 +46,24 @@ class Requests extends Model
 	return $this->findFirst($conditions);
 	}
 
-	// public function displayAddress()
-	// {
-	// 	$address = '';
-	// 	if(!empty($this->address))
-	// 	{
-	// 		$address.=$this->address."<br>";
+	public function displayAddress()
+	{
+		$address = '';
+		if(!empty($this->address))
+		{
+			$address.=$this->address."<br>";
 
-	// 	}
-	// 	// if(!empty($this->address1))
-	// 	// {
-	// 	// 	$address.=$this->address1."<br>"; //if two or more address
+		}
+		// }
+		return $address;
+	}
 
-	// 	// }
-	// 	if(!empty($this->city))
-	// 	{
-	// 		$address.=$this->city.",";
-	// 	}
-
-	// 		$address.=$this->state." ".$this->zip."<br>";
-	// 	// }
-	// 	return $address;
-	// }
-
-	// public function displayAddressLabel()
-	// {
-	// 	$html = $this->displayName()."<br>";
-	// 	$html .= $this->displayAddress();
-	// 	return $html;
-	// }
+	public function displayAddressLabel()
+	{
+		$html = $this->displayName()."<br>";
+		$html .= $this->displayAddress();
+		return $html;
+	}
 
 }
 
