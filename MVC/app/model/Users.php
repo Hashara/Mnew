@@ -190,7 +190,7 @@ class Users extends Model
 
 	public function displayName()
 	{
-		return $this->fname.' '.$this->lname;
+		return $this->username.' '.$this->contactnumber;
 	}
 
 	public static $addValidation =
