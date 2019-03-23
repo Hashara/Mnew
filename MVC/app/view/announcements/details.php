@@ -5,16 +5,12 @@
 
 <div class="col-md-8 col-md-offset-2 well">
 	<a href="<?=PROOT?>contacts" class="btn btn-xs btn-default"> Back</a>
-	<h2 class="text-center"><?=$this->contact->displayaddName()?></h2>
+	<h2 class="text-center"><?=$this->contact->topic?></h2>
 	<div class="col-md-6">
-		<p><strong><pre> First :  </strong><?=$this->contact->age?></pre></p>
-		<p><strong><pre> Email :  </strong><?=$this->contact->email?></pre></p>
-		<p><strong><pre> Mobile :  </strong><?=$this->contact->cell_phone?></pre></p>
-		<p><strong><pre> Home :  </strong><?=$this->contact->home_phone?></pre></p>
+		<p><strong><pre> Content :  </strong><?=$this->contact->content?></pre></p>
+		<p><strong><pre> Urban Council :  </strong><?=$this->contact->uc?></pre></p>
 	</div>
-	<div class="col-md-6">
-		<?=$this->contact->displayAddressLabel()?>
-	</div>
+
 </div>
 
 <?php $this->end(); ?>
