@@ -3,11 +3,8 @@
 <?php $this->start('head'); ?>
 <?php $this->end(); ?>
 <?php $this->start('body'); ?>
-<center>
+
 <div class = "container">
-<div class="row"> 
-    <div class="column">
-    <div class="card">
 	<h3 class="text-center p-4">Sign In</h3>
 	<form class="form" action="<?=PROOT?>register/login" method="post" >
 		<div class="form-group">
@@ -31,9 +28,7 @@
 		<a href="<?=PROOT?>register/register" class ="text-primary"> Register </a> <br>
 		<a href = #  class ="text-primary"> Forget password ? </a>
 	</div>
-	</div>
+
 </div>
-</div>
-</div>
-</center>
+
 <?php $this->end(); ?>
