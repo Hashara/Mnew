@@ -15,9 +15,9 @@ class UcController extends Controller
     public function indexAction()
     {
         $contacts = $this->UcModel->findByUserId(currentUser()->id,['order'=>'name']);
-        // dnd($contacts);fname
+        // dnd($contacts)->name
         $this->view->contacts=$contacts;
-        $this->view->render('uc/index');
+        $this->view->render('ucs/index');
     }
 
     public function addAction()
@@ -60,7 +60,7 @@ class UcController extends Controller
         $this->view->contact = $contact;
         $this->view->postAction=PROOT.'uc'.DS.'add';
         // dnd($this->view->postAction);
-        $this->view->render('uc/add');
+        $this->view->render('ucs/add');
     }
 
 
@@ -70,10 +70,10 @@ class UcController extends Controller
     $contact = $this->UcModel->findByIdAndUserId((int)$id,currentUser()->id);//cast is a security to check its a number
     // dnd($contact);
     if(!$contact){
-      Router::redirect('contacts');//no contact
+      Router::redirect('uc');//no contact
     }
     $this->view->contact = $contact;
-    $this->view->render('uc/details');
+    $this->view->render('ucs/details');
   }
 
 
@@ -109,7 +109,7 @@ class UcController extends Controller
     $this->view->displayErrors=$validation->displayErrors();
     $this->view->contact = $contact;
     $this->view->postAction = PROOT . 'uc' . DS . 'edit' . DS . $contact->id;
-    $this->view->render('uc/edit');
+    $this->view->render('ucs/edit');
   }
 
   public function deleteAction($id){
