@@ -21,80 +21,80 @@ class Accounts extends Model
 
 	public function displayName()
 	{
-		return $this->fname.' '.$this->lname;
+		return $this->username;
 	}
 
 	public static $addValidation =
 	[
-                'fname'=>[
-                    'display' => 'First Name'
-                    // 'required' => true
-                ],
-                'lname'=>[
-                    'display' => 'Last Name'
-                    // 'required' => true
-                ],
-                'username' => [
-                    'display' => 'username',
-                    // 'required' => true,
-                    'unique' => 'users',
-                    //'valid_email' => true
-                    'min'=> 4
-                    //'max' =>25
-                ],
-                'email' => [
-                    'display' => 'Email',
-                    'required' => true,
-                    'unique' => 'users',
-                    'valid_email' => true,
-                    'min'=> 4
-                    //'max' =>25
-                ],
-                'password' => [
-                    'display' => 'Password',
-                    // 'required' => true,
-                    'min' => 6
-                    //'max' => 100
-                ],
-                'address' => [
-                    'display' => 'Address',
-                    // 'required' => true,
-                    'min' => 6
-                    //'max' => 100
-                ],
-                // 'phoneNumber' => [
-                //     'display' => 'Contact Number 1',
-                //     'required' => true,
-                //     'min' => 10,
-                //     'max' => 10
+                // 'fname'=>[
+                //     'display' => 'First Name'
+                //     // 'required' => true
                 // ],
-                'phoneNumber2' => [
-                    'display' => 'Contact Number 2',
-                    'min' => 10
-                    //'max' => 100
-                ],
-                'serviceType' => [
-                    'display' => 'Service Type'
-                    // 'required' => true
+                // 'lname'=>[
+                //     'display' => 'Last Name'
+                //     // 'required' => true
+                // ],
+                // 'username' => [
+                //     'display' => 'username',
+                //     // 'required' => true,
+                //     'unique' => 'users',
+                //     //'valid_email' => true
+                //     'min'=> 4
+                //     //'max' =>25
+                // ],
+                // 'email' => [
+                //     'display' => 'Email',
+                //     'required' => true,
+                //     'unique' => 'users',
+                //     'valid_email' => true,
+                //     'min'=> 4
+                //     //'max' =>25
+                // ],
+                // 'password' => [
+                //     'display' => 'Password',
+                //     // 'required' => true,
+                //     'min' => 6
+                //     //'max' => 100
+                // ],
+                // 'address' => [
+                //     'display' => 'Address',
+                //     // 'required' => true,
+                //     'min' => 6
+                //     //'max' => 100
+                // ],
+                // // 'phoneNumber' => [
+                // //     'display' => 'Contact Number 1',
+                // //     'required' => true,
+                // //     'min' => 10,
+                // //     'max' => 10
+                // // ],
+                // 'phoneNumber2' => [
+                //     'display' => 'Contact Number 2',
+                //     'min' => 10
+                //     //'max' => 100
+                // ],
+                // 'serviceType' => [
+                //     'display' => 'Service Type'
+                //     // 'required' => true
                     
-                ],
-                'userType' => [
-                    'display' => 'User type'
-                    // 'required' => true
-                    //'max' => 100
-                ],
-                'customerResidence' => [
-                    'display' => 'Customer Residence',
-                    // 'required' => true
-                    //'max' => 100
-                ],
+                // ],
+                // 'userType' => [
+                //     'display' => 'User type'
+                //     // 'required' => true
+                //     //'max' => 100
+                // ],
+                // 'customerResidence' => [
+                //     'display' => 'Customer Residence',
+                //     // 'required' => true
+                //     //'max' => 100
+                // ],
 
-                'confirm' => [
-                    'display' => 'Confirm Password',
-                    // 'required' => true,
-                    'matches' => 'password'
+                // 'confirm' => [
+                //     'display' => 'Confirm Password',
+                //     // 'required' => true,
+                //     'matches' => 'password'
 
-                ]
+                // ]
             ];
 
 
@@ -123,17 +123,17 @@ class Accounts extends Model
 			$address.=$this->address."<br>";
 
 		}
-		// if(!empty($this->address1))
+		// // if(!empty($this->address1))
+		// // {
+		// // 	$address.=$this->address1."<br>"; //if two or more address
+
+		// // }
+		// if(!empty($this->city))
 		// {
-		// 	$address.=$this->address1."<br>"; //if two or more address
-
+		// 	$address.=$this->city.",";
 		// }
-		if(!empty($this->city))
-		{
-			$address.=$this->city.",";
-		}
 
-			$address.=$this->state." ".$this->zip."<br>";
+		// 	$address.=$this->state." ".$this->zip."<br>";
 		// }
 		return $address;
 	}
@@ -145,13 +145,13 @@ class Accounts extends Model
 		return $html;
 	}
 
-	public function displayType()
-	{
-		// return $this->fname.' '.$this->lname;
-		if($this->userType == "Both")
-		{
-			return "Both Provider and Customer";
-		}
+	// public function displayType()
+	// {
+	// 	// return $this->fname.' '.$this->lname;
+	// 	if($this->userType == "Both")
+	// 	{
+	// 		return "Both Provider and Customer";
+	// 	}
 		return $this->userType;
 	}
 
