@@ -33,7 +33,8 @@
 	 	"Advertisements" : ["*"],
 	 	"Home" : ["*"],
 	 	"Accounts" : ["edit","index","delete"],
-	 	"Company" :["*"]
+	 	"Company" :["*"],
+	 	"Uc":["*"]
 
 	 },
 
