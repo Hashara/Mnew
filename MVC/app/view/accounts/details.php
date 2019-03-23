@@ -8,10 +8,10 @@
 	<h2 class="text-center"><?=$this->account->username?></h2>
 	<div class="col-md-6">
 		<p><strong><pre> Name :  </strong><?=$this->account->displayName()?></pre></p>
-		<p><strong><pre> Email :  </strong><?=$this->account->email?></pre></p>
-		<p><strong><pre> Contact :  </strong><?=$this->account->phonenumber2?></pre></p>
-		<p><strong><pre> Address :  </strong><?=$this->account->displayAddress()?></pre></p>
-		<p><strong><pre> Type of User :  </strong><?=$this->account->displayType()?></pre></p>
+		<p><strong><pre> Contact Number :  </strong><?=$this->account->contactnumber?></pre></p>
+		<p><strong><pre> Address :  </strong><?=$this->account->address?></pre></p>
+		<p><strong><pre> Type :  </strong><?=$this->account->usertype?></pre></p>
+		
 	</div>
 	<div class="col-md-6">
 		<?=$this->account->displayAddressLabel()?>
