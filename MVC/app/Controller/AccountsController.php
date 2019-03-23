@@ -71,53 +71,16 @@ class AccountsController extends Controller
       $account->assign($_POST); //form validation
       // dnd($contact->assign($_POST));
     $validation->check($_POST,[
-                'name'=>[
-                    'display' => 'First Name'
-                    // 'required' => true
-                ],
-                'username' => [
-                    'display' => 'username',
-                    // 'required' => true,
-                    // 'unique' => 'users'
-                    //'valid_email' => true
-                    'min'=> 4
-                    //'max' =>25
-                ],
-                'password' => [
-                    'display' => 'Password',
-                    // 'required' => true,
-                    'min' => 6
-                    //'max' => 100
-                ],
-                'address' => [
-                    'display' => 'Address',
-                    // 'required' => true,
-                    'min' => 6
-                    //'max' => 100
-                ],
-                // 'phoneNumber' => [
-                //     'display' => 'Contact Number 1',
-                //     'required' => true,
-                //     'min' => 10,
-                //     'max' => 10
-                // ],
-                'contact' => [
-                    'display' => 'Contact Number 2',
-                    'min' => 10
-                    //'max' => 100
-                ],
-                'usertype' => [
-                    'display' => 'User type'
-                    // 'required' => true
-                    //'max' => 100
-                ],
-                'confirm' => [
-                    'display' => 'Confirm Password',
-                    // 'required' => true,
-                    'matches' => 'password'
-
-                ]
-            ]);
+            'username' => [
+                'display' => "Username",
+                'required' => true
+            ],
+            'password' => [
+                'display' => "Password",
+                'required' => true
+                
+            ]
+        ]);
 
       
       // dnd($_POST);
