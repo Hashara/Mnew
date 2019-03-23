@@ -3,11 +3,6 @@
 "Company":{
 
 
-	"Contacts" : {
-		"My Contacts" : "contacts",
-		"separator" : "<br>",
-		"Add Contacts" : "contacts/add"
-	},
 
 	"Amount collected": "garbages",
 	"About us" : "details",
@@ -19,11 +14,7 @@
 "Admin":{
 
 
-	"Contacts" : {
-		"My Contacts" : "contacts",
-		"separator" : "<br>",
-		"Add Contacts" : "contacts/add"
-	},
+
 
 	"Companies" : {
 		"Current Companies" : "company",
@@ -45,11 +36,7 @@
 
 "Customer":{
 
-	"Contacts" : {
-		"My Contacts" : "contacts",
-		"separator" : "<br>",
-		"Add Contacts" : "contacts/add"
-	},
+
 
 	"Requests" : 
 	{
