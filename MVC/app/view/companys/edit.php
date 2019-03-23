@@ -1,4 +1,4 @@
-<?php $this->setSiteTitle('Edit Contact'); ?>
+<?php $this->setSiteTitle('Edit Company Details'); ?>
 <?php $this->start('head'); ?>
 <?php $this->end(); ?>
 <?php $this->start('body'); ?>
@@ -7,7 +7,7 @@
 <!-- 	<a href="<?=PROOT?>contacts" class="btn btn-xs btn-default"> Back</a>
  -->	
  <h2 class="text-center"><?=$this->contact->displayName()?></h2>
- <?= $this->partial('contacts','form')?>
+ <?= $this->partial('companys','form')?>
 	<!-- <div class="col-md-6">
 		<p><strong><pre> Email :  </strong><?=$this->contact->email?></pre></p>
 		<p><strong><pre> Mobile :  </strong><?=$this->contact->cell_phone?></pre></p>
