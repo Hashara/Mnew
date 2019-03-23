@@ -6,7 +6,7 @@ class RequestsController extends Controller
 	{
 		parent::__construct($controller , $action);
 		$this->view->setLayout('defaultlay');
-		$this->load_model('Requests');
+		$this->load_model('Request');
 		//dnd($this->load_model('Contacts'));
 	}
 
@@ -14,38 +14,37 @@ class RequestsController extends Controller
 
 	public function indexAction()
 	{
-		$requests = $this->RequestsModel->findByUserId(currentUser()->id,['order'=>'lname, fname']);
-		// dnd($contacts);
-		$this->view->requests=$requests;
+		$contacts = $this->RequestModel->findByUserId(currentUser()->id,['order'=>'name']);
+		// dnd($contacts);fname
+		$this->view->contacts=$contacts;
 		$this->view->render('requests/index');
 	}
 
 	public function addAction()
 	{	
-		$request = new Requests();
+		$contact = new Request();
 		$validation = new Validate();
 		if($_POST)
 		{
-			$request->assign($_POST);	//form validation
+			$contact->assign($_POST);	//form validation
 			// dnd($contact->assign($_POST));
-		$validation->check($_POST,Requests::$addValidation);
+		$validation->check($_POST,Request::$addValidation);
 
 			
 			// dnd($_POST);
 			
 			if($validation->passed())
 			{ 
-			$request->user_id =currentUser()->id;
+			$contact->user_id =currentUser()->id;
 			// dnd(currentUser()->id);
 				// dnd("klk");
 				// dnd($contact->assign($_POST));
-			$request->deleted=0;
-			$request->customer=currentUser()->username;
+			$contact->deleted=0;
 			// dnd($contact->deleted);
 				// $contact->assign($_POST);
 				// dnd()
 			// dnd($contact->save());
-				$request->save();
+				$contact->save();
 
 				Router::redirect('requests');
 			}
@@ -58,7 +57,7 @@ class RequestsController extends Controller
 		// 	dnd("jkj");
 		// }
 		$this->view->displayErrors=$validation->displayErrors();
-		$this->view->request = $request;
+		$this->view->contact = $contact;
 		$this->view->postAction=PROOT.'requests'.DS.'add';
 		// dnd($this->view->postAction);
 		$this->view->render('requests/add');
@@ -68,12 +67,12 @@ class RequestsController extends Controller
   public function detailsAction($id)
   {
   	// dnd($id);
-    $request = $this->RequestsModel->findByIdAndUserId((int)$id,currentUser()->id);//cast is a security to check its a number
+    $contact = $this->RequestModel->findByIdAndUserId((int)$id,currentUser()->id);//cast is a security to check its a number
     // dnd($contact);
-    if(!$request){
+    if(!$contact){
       Router::redirect('requests');//no contact
     }
-    $this->view->request = $request;
+    $this->view->contact = $contact;
     $this->view->render('requests/details');
   }
 
@@ -82,15 +81,15 @@ class RequestsController extends Controller
   {
   	// dnd($id);
   	$validation = new Validate();
-    $request = $this->RequestsModel->findByIdAndUserId((int)$id,currentUser()->id);
+    $contact = $this->RequestModel->findByIdAndUserId((int)$id,currentUser()->id);
 
-    if(!$request) Router::redirect('requests');
+    if(!$contact) Router::redirect('requests');
 
     if($_POST)
     {
-			$request->assign($_POST);	//form validation
+			$contact->assign($_POST);	//form validation
 			// dnd($contact->assign($_POST));
-		$validation->check($_POST,Requests::$addValidation);
+		$validation->check($_POST,Request::$addValidation);
 
 			
 			// dnd($_POST);
@@ -101,23 +100,23 @@ class RequestsController extends Controller
 				// $contact->assign($_POST);
 				// dnd()
 			// dnd($contact->save());
-				$request->save();
+				$contact->save();
 
 				Router::redirect('requests');
 			}
 		}
 
     $this->view->displayErrors=$validation->displayErrors();
-    $this->view->request = $request;
-    $this->view->postAction = PROOT . 'requests' . DS . 'edit' . DS . $request->id;
+    $this->view->contact = $contact;
+    $this->view->postAction = PROOT . 'requests' . DS . 'edit' . DS . $contact->id;
     $this->view->render('requests/edit');
   }
 
   public function deleteAction($id){
-    $request = $this->RequestsModel->findByIdAndUserId((int)$id,currentUser()->id);//cast is a security to check its a number
+    $contact = $this->RequestModel->findByIdAndUserId((int)$id,currentUser()->id);//cast is a security to check its a number
     // dnd($contact);
-    if($request){
-      $request->delete(); 
+    if($contact){
+      $contact->delete(); 
       // Session::addMsg('success','Contact has been deleted.');
     }
     Router::redirect('requests');
