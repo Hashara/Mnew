@@ -25,7 +25,7 @@ else
 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
     <div class="container">
         <a class="navbar-brand" href="<?= PROOT ?>">
             <?= MENU_BRAND ?></a>
